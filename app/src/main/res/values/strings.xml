@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">The Masked Bandits</string>
+    <string name="register">Don\'t have an account? Click here to Register!</string>
+    <string name="login">Already have an account? Click here to go back to login page..</string>
+</resources>

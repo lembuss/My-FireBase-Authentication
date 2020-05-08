@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "573080981616",
+    "firebase_url": "https://fb-login-authentication.firebaseio.com",
+    "project_id": "fb-login-authentication",
+    "storage_bucket": "fb-login-authentication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573080981616:android:2ac7b9a6a9a43bfca564b5",
+        "android_client_info": {
+          "package_name": "com.example.firebaseauthentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573080981616-qdf89r0svmpvrvhbpp9pfk863f7rsv1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNAdcsxHKTCqlndNMqBSG5lmBio-FbQxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573080981616-qdf89r0svmpvrvhbpp9pfk863f7rsv1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
