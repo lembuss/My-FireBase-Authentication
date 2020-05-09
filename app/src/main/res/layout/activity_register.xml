@@ -69,19 +69,20 @@
         tools:ignore="Autofill,HardcodedText" />
 
     <EditText
-        android:textColor="#000"
-        android:textSize="20sp"
         android:id="@+id/regPC"
         android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
+        android:textColor="#000"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regPass"
-        app:layout_constraintVertical_bias="0.097"
+        app:layout_constraintVertical_bias="0.207"
         tools:ignore="Autofill,HardcodedText" />
 
     <Button
@@ -100,8 +101,8 @@
         app:layout_constraintVertical_bias="0.151"
         tools:ignore="HardcodedText" />
 
-    <Button
-        android:textColor="#D50202"
+    <TextView
+        android:textColor="#021BD5"
         android:textAllCaps="false"
         android:background="#FFFFFF"
         android:id="@+id/regLog"
@@ -112,4 +113,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnReg" />
+
+    <TextView
+        android:textColor="#E30101"
+        android:textStyle="italic"
+        android:textSize="15sp"
+        android:id="@+id/pLimit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="**Password must be at least 6 characters long"
+        app:layout_constraintBottom_toTopOf="@+id/regPC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regPass"
+        app:layout_constraintVertical_bias="0.055"
+        tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

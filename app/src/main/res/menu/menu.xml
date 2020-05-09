@@ -7,4 +7,5 @@
         android:id="@+id/signOut"
         app:showAsAction="never"
         tools:ignore="HardcodedText" />
+
 </menu>

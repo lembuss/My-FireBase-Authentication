@@ -1,5 +1,6 @@
 package com.example.firebaseauthentication
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,18 +22,21 @@ class LandingPage : AppCompatActivity() {
         //        refer to welcome text
         val displaytxt = findViewById<View>(R.id.welcomeText) as TextView
 
-//        target the same database
+//        target the information from database
         myUsers = FirebaseDatabase.getInstance().getReference("Names")
+        var user = FirebaseAuth.getInstance().currentUser
+        var uid = user!!.uid
 
-        myUsers.addValueEventListener(object : ValueEventListener {
+        myUsers.child(uid).child("Name").addValueEventListener( object: ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 TODO("Not yet implemented")
             }
 
+            @SuppressLint("SetTextI18n")
             override fun onDataChange(snapshot: DataSnapshot) {
                 // import user name and display it on landing page
-                val result = snapshot.child("Name").toString()
-                displaytxt.text = "Welcome" + result
+                val result = snapshot.value.toString()
+                displaytxt.text = "Welcome $result"
             }
 
         })

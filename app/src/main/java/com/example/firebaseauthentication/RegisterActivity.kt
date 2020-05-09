@@ -32,6 +32,11 @@ class RegisterActivity : AppCompatActivity() {
             // initiate registration
             View -> Register()
         }
+
+//        option to return to the log in menu
+        regLog.setOnClickListener {
+            startActivity(Intent(this, MainActivity:: class.java))
+        }
     }
 
     private fun Register(){
@@ -42,6 +47,7 @@ class RegisterActivity : AppCompatActivity() {
 
 //   ***     create the database to hold the user name
         myUsers = FirebaseDatabase.getInstance().getReference("Names")
+
 
 
         val nameTxt = findViewById<View>(R.id.regName) as EditText
@@ -62,6 +68,7 @@ class RegisterActivity : AppCompatActivity() {
             if (password != passconfirm){
 //                Toast.makeText(this, "Passwords don't match", Toast.LENGTH_LONG).show()
                 dialogbox("Password Error", "Passwords don't match!")
+                clear()     // clear fields
             } else{
 
                 progress.show()
@@ -70,7 +77,7 @@ class RegisterActivity : AppCompatActivity() {
                     progress.dismiss()
                     if (task.isSuccessful){
 
-//                     *** add the info to the database using the uid as a reference id
+//                   *** add the info to the database using the uid as a reference id
                         val user = myAuth.currentUser
                         val uid = user!!.uid
                         myUsers.child(uid).child("Name").setValue(name)
@@ -79,12 +86,12 @@ class RegisterActivity : AppCompatActivity() {
                         startActivity(Intent(this, MainActivity:: class.java))
                     } else{
                         Toast.makeText(this, "Error with registration", Toast.LENGTH_LONG).show()
+//                        clear all fields
+                        clear()
+
                     }
                 })
             }
-            // create user
-
-
         }
 
     }
@@ -98,4 +105,17 @@ class RegisterActivity : AppCompatActivity() {
         })
         mydialog.create().show()
     }
+
+    private fun clear(){
+        val nameTxt = findViewById<View>(R.id.regName) as EditText
+        val emailTxt = findViewById<View>(R.id.regMail) as EditText
+        val passwordTxt = findViewById<View>(R.id.regPass) as EditText
+        val pcTxt = findViewById<View>(R.id.regPC) as EditText
+
+        emailTxt.setText(null)
+        nameTxt.setText(null)
+        passwordTxt.setText(null)
+        pcTxt.setText(null)
+    }
+
 }
