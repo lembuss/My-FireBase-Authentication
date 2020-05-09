@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                     progress.dismiss()
                     // confirm log in and redirect
                     Toast.makeText(this, "Log in Successful", Toast.LENGTH_LONG).show()
-                    startActivity(Intent(this, BanditList::class.java))
+                    startActivity(Intent(this, LandingPage::class.java))
                 } else{
 //                    Toast.makeText(this, "Log In Error, try again", Toast.LENGTH_LONG).show()
                     dialogBox("Log In Error", "Wrong credentials. Please try again.")

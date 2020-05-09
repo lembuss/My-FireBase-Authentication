@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LandingPage"/>
         <activity android:name=".BanditList" />
         <activity android:name=".SplashActivity">
             <intent-filter>
